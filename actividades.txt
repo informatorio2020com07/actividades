@@ -44,3 +44,43 @@ _______________
 
 003- 
     Crear una clase Persona, que tenga atributo nombre y apellido, y los metodos get y set para cada atributo.
+
+004-
+
+    Un programa que permita escribir varios modelos de cartas/notas
+y que después pueda seleccionar un modelo de nota, y que me generé
+varias notas reemplazando los destinatarios con una lista de nombres
+que se le pase y el nombre del remitente indicado.
+    
+    Ej:
+    ----
+        Estimado (nombre):
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            (nombre_remitente)
+    ----
+
+    Pasandole lista destinatarios: Juan, Sandra y Jorge.
+        Y remitente Axel.
+
+    ----
+        Estimado Juan:
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            Axel
+    ----
+        Estimado Sandra:
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            Axel
+    ----
+
+        Estimado Jorge:
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            Axel                        
+    ----
