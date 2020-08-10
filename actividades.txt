@@ -84,3 +84,10 @@ que se le pase y el nombre del remitente indicado.
         Con afecto,
             Axel                        
     ----
+
+
+005-
+    Función que reciba como parametros dos números (a y b), y
+devuelva una tupla con todos los números primos que se encuentra entre
+a y b (incluyendo a y b si son primos).
+    Por defecto a=0, y b=100
