@@ -1,13 +1,13 @@
 """En otro archivo, importar las funciones creadas.
 Realizar un programa que"""
-from ejercicios import convertidor_hh_mm_ss
+from funciones import convertidor_hh_mm_ss
 """Primero pregunte por una cantidad de segundos, 
 y diga cuantas horas, minutos y segundos son."""
 print("CONVERTIDOR DE HS:MM:SS")
 segun=int(input("ingrese la cantidad de segundo a convertir: "))
 convertidor=convertidor_hh_mm_ss(segun)
 print("expresado en hs:mm:ss",convertidor)
-from ejercicios import suma_hh_mm_ss
+from funciones import suma_hh_mm_ss
 mm=int(input("ingrese la cantidad de minutos a convertir: "))
 minu=suma_hh_mm_ss(0,mm)
 print("expresado en hs:mm:ss",convertidor_hh_mm_ss(minu))
