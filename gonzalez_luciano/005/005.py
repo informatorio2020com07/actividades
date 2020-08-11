@@ -9,7 +9,7 @@ def primos(a=0, b=100):
     for n in range(max(a,2), b+1):
         if es_primo(n):
             res.append(n)
-    return res
+    return tuple(res)
 
 print(primos(20, 50))
 print(primos())
