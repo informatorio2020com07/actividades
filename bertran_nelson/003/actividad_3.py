@@ -1,3 +1,8 @@
+"""
+	Crear una clase Persona, que tenga atributo nombre y apellido, 
+	y los metodos get y set para cada atributo.
+"""
+
 class Persona():
 
 	"""
