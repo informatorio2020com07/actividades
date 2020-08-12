@@ -21,7 +21,7 @@ def main():
 	
 	#Luego, preguntar por una cantidad de minutos y decir a cuantas horas, minutos y segundos representa.
 	minutos=comprobacion("1 - ingresa una cantidad de minutos: ")
-	segundos=conversor_segundos(0,minutos)
+	segundos=conversor_segundos(minutos=minutos)
 	horario2=conversor_horario(segundos)
 	print("el tiempo ingresado en minutos equivale a: \n horas: {0}, minutos: {1}, segundos: {2}".format(*horario2))
 	
