@@ -9,13 +9,12 @@ class Persona:
         return self.nombre
     
     def set_nombre(self,nombre):
+        self.nombre=nombre
         return self.nombre
 
     def get_apellido(self):
         return self.apellido
     
     def set_apellido(self,apellido):
+        self.apellido=apellido
         return self.apellido
-    
-
-
