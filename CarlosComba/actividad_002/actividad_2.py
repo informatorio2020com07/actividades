@@ -12,8 +12,5 @@ def sumar_segundos(hora=0,minuto=0,segundo=0):
     segsuma=hora*3600+minuto*60+segundo
     return segsuma 
 
-def transformar_minutos(minutos):
-    """transforma los minutos con coma en segundos usando la funcion"""
-    return transformar_segundos(minutos*60)
 
 

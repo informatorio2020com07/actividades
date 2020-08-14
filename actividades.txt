@@ -1,4 +1,4 @@
-1- Realizar un fork del repositorio.
+1- Realizar un fork del repositorio. 
 2- Crear una carpeta nombrada "apellido_nombre".
 3- Crear subcarpetas nombrada con el número de la actividad y dentro
 de ellas la actividad resuelta.
