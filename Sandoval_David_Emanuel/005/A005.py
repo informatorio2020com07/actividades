@@ -28,4 +28,6 @@ def primos_en_rango(a=0, b=100):
     return primos_in_range # y lo devuelvo
 
 
-print(primos_en_rango(5, 9743))
+if __name__ == "__main__":
+    # debería incluir los números primos del 2 al 97
+    print(primos_en_rango(b=97))

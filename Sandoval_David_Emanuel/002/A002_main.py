@@ -16,6 +16,8 @@
 #                 Equivale a: 37825 Segundos.
 
 
+import re
+
 from A002 import seconds_to_hhmmss, hhmmss_to_seconds
 
 
@@ -23,16 +25,14 @@ def preguntar_segundos():
     """Pide que ingresen segundos, y muestra el equivalente en horas, minutos y segundos"""
     segundos = int(input("Ingresar segundos: "))
     tiempo = seconds_to_hhmmss(segundos)
-    print(
-        f"En {segundos} segundos hay {tiempo[0]} horas, {tiempo[1]} minutos y {tiempo[2]} segundos.")
+    print(f"En {segundos} segundos hay {tiempo[0]} horas, {tiempo[1]} minutos y {tiempo[2]} segundos.")
 
 
 def preguntar_minutos():
     """Pide que ingresen minutos, y muestra el equivalente en horas, minutos y segundos"""
     minutos = int(input("Ingresar minutos: "))
     tiempo = seconds_to_hhmmss(hhmmss_to_seconds(minutes=minutos))
-    print(
-        f"En {minutos} segundos hay {tiempo[0]} horas, {tiempo[1]} minutos y {tiempo[2]} segundos.")
+    print(f"En {minutos} segundos hay {tiempo[0]} horas, {tiempo[1]} minutos y {tiempo[2]} segundos.")
 
 
 def validate_format(horario: str):
@@ -40,7 +40,6 @@ def validate_format(horario: str):
     Valida que el 'horario' tenga el formato correcto:
     Debe ser: hh:mm:ss >>> horas(1 o mas cifras):minutos(1 o mas cifras):segundos(1 o mas cifras)
     """
-    import re
     if re.match(r"\d+:\d+:\d+", horario):
         return True
     else:
@@ -58,8 +57,7 @@ def pedir_tiempo_en_string():
             hh, mm, ss = [int(number) for number in str_tiempo.split(":")]
             hh, mm, ss = seconds_to_hhmmss(hhmmss_to_seconds(hh, mm, ss))
             print(f"Ingresado {hh} horas, {mm} minutos y {ss} segundos")
-            print(
-                f"Sumando un total de {hhmmss_to_seconds(hh, mm, ss)} segundos")
+            print(f"Sumando un total de {hhmmss_to_seconds(hh, mm, ss)} segundos")
             break
         else:
             print("Formato incorrecto\n")

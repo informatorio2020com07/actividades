@@ -3,7 +3,8 @@
 #     segundos, y devuelva una tupla con la cantidad de segundos
 #     expresada en hh,mm,ss.
 
-#     Realizar una función que reciba como parámetros cantidades de horas, minutos y/o segundos. Y que retorne la suma de estos expresanda en segundos. (Los parámetros, son opcionales y por defecto sus valores 0.)
+#     Realizar una función que reciba como parámetros cantidades de horas, minutos y/o segundos. 
+#     Y que retorne la suma de estos expresanda en segundos. (Los parámetros, son opcionales y por defecto sus valores 0.)
 
 #     En otro archivo, importar las funciones creadas.
 #     Realizar un programa que:
@@ -23,8 +24,6 @@
 #                 Equivale a: 37825 Segundos.
 
 
-# import datetime
-
 def seconds_to_hhmmss(segundos: int):
     """Convierte la cantidad de segundos pasados como argumento a una tupla de (hh, mm, ss)"""
     minutos = segundos//60
@@ -43,4 +42,3 @@ if __name__ == "__main__":
     segundos = 3453543534351
     print(seconds_to_hhmmss(segundos))
     print(segundos == hhmmss_to_seconds(*seconds_to_hhmmss(segundos))) # should be true
-
