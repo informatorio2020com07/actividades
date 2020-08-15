@@ -9,7 +9,7 @@ def esprimo(numero):
 	return True		
 
 
-def primos(a,b):
+def primos(a=0,b+1):
 	lista=[]
 	
 	for a in range(b):
