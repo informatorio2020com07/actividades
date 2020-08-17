@@ -28,13 +28,9 @@ para salir: ")
     return lista,remitente
 
 def cambiar_mensaje(nota_recibida,destinatario,remitente):
-    nota1=nota_recibida.copy()
-    for y,x in enumerate(nota1):
-        if x.find("destinatario") != -1:
-            nota1[y]=x.replace("destinatario",destinatario)
-        elif x.find("remitente") != -1:
-            nota1[y]=x.replace("remitente",remitente)        
-    return nota1
+    for y,x in enumerate(nota_recibida):
+        nota_recibida[y]=x.replace("destinatario",destinatario).replace("remitente",remitente)        
+    return nota_recibida
 
 
 def mostrar_nota(lista):
