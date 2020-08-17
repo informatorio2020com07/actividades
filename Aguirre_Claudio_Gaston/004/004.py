@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*- 
 #Un programa que permita escribir varios modelos de cartas/notas y que después pueda seleccionar un modelo de nota, y que me genere varias notas reemplazando los destinatarios con una lista de nombres que se le pase y el nombre del remitente indicado.
 import os
-import sys
 
 def carta():
 #permite escribir cartas/notas 
