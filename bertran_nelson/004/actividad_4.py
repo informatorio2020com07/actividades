@@ -35,7 +35,7 @@
 """
 
 print("Seleccione modelo de nota: (1 / 2) o 3 si quiere introducir su propio modelo\n"+
-		"(utilice -- para salto de linea, --- para indicar donde va el remitente).\n"+
+		"(utilice -- para salto de linea, ++ para indicar donde va el remitente).\n"+
 		"\n"+
 		"1_modelo: 	'Estimado (Remitente):\n"+
 						"Le damos la bienvenida al servicio.\n"+
