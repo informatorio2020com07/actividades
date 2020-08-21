@@ -35,35 +35,35 @@
 """
 
 print("Seleccione modelo de nota: (1 / 2) o 3 si quiere introducir su propio modelo\n"+
-		"(utilice -- para salto de linea, ++ para indicar donde va el remitente).\n"+
+		"(utilice -- para salto de linea, ++ para indicar donde va el destinatario).\n"+
 		"\n"+
-		"1_modelo: 	'Estimado (Remitente):\n"+
+		"1_modelo: 	'Estimado (Destinatario):\n"+
 						"Le damos la bienvenida al servicio.\n"+
 						"\n"+
 					"Con afecto,\n"+
 						"(Autor)'\n"+
 						"\n"+
-		"2_modelo: 'Bienvenido (Remitente):\n"+
+		"2_modelo: 'Bienvenido (Destinatario):\n"+
 						"Con mucho afecto le damos la bienvenida al servicio.\n"+
 						"\n"+
 					"Saludos cordiales, (Autor)'\n")
 
 opcion = input()
 
-listaRemitentes = []
+listaDestinatarios = []
 
 def pideLista():
-	print("Ahora ingrese una lista de remitentes separado por coma: ")
+	print("Ahora ingrese una lista de destinatarios separado por coma: ")
 	cadenaRemitentes = input()
 
-	listaRemitentes = cadenaRemitentes.split(sep=',')
+	listaDestinatarios = cadenaRemitentes.split(sep=',')
 
-	return listaRemitentes
+	return listaDestinatarios
 
 if opcion == "1":
 
 	modeloUno = """
-				Estimado (remitente):
+				Estimado (destinatario):
 						Le damos la bienvenida al servicio.
 						
 					Con afecto,
@@ -71,18 +71,18 @@ if opcion == "1":
 				"""
 
 	autor = input("Ingrese autor: ")
-	listaRemitentes = pideLista()
+	listaDestinatarios = pideLista()
 
 	modeloUno = modeloUno.replace("(autor)", autor)
 
-	for r in listaRemitentes:
-		modeloUnoPrint = modeloUno.replace("(remitente)", r)
+	for r in listaDestinatarios:
+		modeloUnoPrint = modeloUno.replace("(destinatario)", r)
 		print(modeloUnoPrint)
 
 elif opcion == "2":
 
 	modeloDos = """
-				Bienvenido (remitente):
+				Bienvenido (destinatario):
 						Con mucho afecto le damos la bienvenida al servicio.
 						
 					Saludos cordiales, (autor)
@@ -90,23 +90,23 @@ elif opcion == "2":
 
 	autor = input("Ingrese autor: ")
 
-	listaRemitentes = pideLista()
+	listaDestinatarios = pideLista()
 
 	modeloDos = modeloDos.replace("(autor)", autor)
 
-	for r in listaRemitentes:
-		modeloDosPrint = modeloDos.replace("(remitente)", r)
+	for r in listaDestinatarios:
+		modeloDosPrint = modeloDos.replace("(destinatario)", r)
 		print(modeloDosPrint)
 
 elif opcion == "3":
 
-	print("Escriba su modelo, recuerde usar -- para saltos de linea, ++ para indicar donde va el remitente.")
+	print("Escriba su modelo, recuerde usar -- para saltos de linea, ++ para indicar donde va el destinatario.")
 	modeloPropio = input()
 	modeloPropioSaltos = modeloPropio.replace("--", "\n")
 	
-	listaRemitentes = pideLista()
+	listaDestinatarios = pideLista()
 
-	for r in listaRemitentes:
-		modeloPropioSPrint = modeloPropioSaltos.replace("++", r)
+	for d in listaDestinatarios:
+		modeloPropioSPrint = modeloPropioSaltos.replace("++", d)
 		print(modeloPropioSPrint)
 		print()
