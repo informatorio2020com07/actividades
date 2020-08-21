@@ -4,7 +4,7 @@
 	a y b (incluyendo a y b si son primos).
     Por defecto a=0, y b=100
 """
-
+"""
 def primosRango(a=0, b=100):
 
 	primos = [2]
@@ -21,3 +21,19 @@ def primosRango(a=0, b=100):
 	return tuple([p for p in primos if (p >= a and p <= b)])
 
 #print(primosRango(a=0, b=200))
+
+"""
+
+def primosRango(a=0, b=100):
+
+	primos = []
+
+	for n in range(a,b):
+		for x in range(2,n):
+			if(n%x==0 and n!=1):
+				break
+		else:
+			primos.append(n)
+
+	return tuple(primos)
+
