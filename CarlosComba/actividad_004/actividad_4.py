@@ -22,9 +22,21 @@ def ingresar_nota():
         renglon=input("")
         if renglon.lower()=="termine":
             break
+        while len(renglon)>399:
+                if len(renglon[0:renglon.find(".")+1]) < 399:
+                    lista_renglones.append(renglon[0:renglon.find(".")+1])
+                    renglon=renglon[renglon.find(".")+1:len(renglon)-1]
+                elif len(renglon[0:renglon.find(",")+1]) < 399:
+                    lista_renglones.append(renglon[0:renglon.find(",")+1])
+                    renglon=renglon[renglon.find(",")+1:len(renglon)-1]                     
+                else:
+                     lista_renglones.append(renglon[0:399])
+                     renglon=renglon[399:len(renglon)-1]
         lista_renglones.append(renglon)
     nota=Nota(titulo, lista_renglones) 
     return nota
+        
+    
 
 def ingresar_personas():
     """recibe los destinatarios"""
