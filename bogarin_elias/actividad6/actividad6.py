@@ -3,9 +3,9 @@
 #los valores que se encuentran duplicados de la lista.
 #Retornar la lista, y una tupla con los valores que han sido
 #eliminados.
+lista = [1,2,3,4,5,2,4,6,6,7,7,8,8,9,9]
+def duplicadosono(lista):
 
-def duplicadosono():
-    lista = [1,2,3,4,5,2,4,6,6,7,7,8,8,9,9]
     norepetidos=[]
     repetidos=[]
     for x in lista:
@@ -16,9 +16,9 @@ def duplicadosono():
             if x not in repetidos:
                 repetidos.append(x)
                 #agrega los numeros repetidos a la lista para luego volverlos tupla y mostrarlos (como si los eliminara)
-
     (tuple(repetidos))
     print ("no repetidos",norepetidos)
     print ("numeros repetidos: ",tuple(repetidos))
+    return lista
     
-duplicadosono()
+duplicadosono(lista)
