@@ -13,7 +13,7 @@ def eliminar_repetidos(lista):
 			repetido.append(elemento)
 	tupla=tuple(repetido)
 
-	return tupla
+	return nueva, tupla
 
 
 Lista = [1,1,1,3,4,4,5,5,5,5,5,5,5,7]
