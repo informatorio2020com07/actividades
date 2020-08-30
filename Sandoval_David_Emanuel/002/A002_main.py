@@ -40,7 +40,7 @@ def validate_format(horario: str):
     Valida que el 'horario' tenga el formato correcto:
     Debe ser: hh:mm:ss >>> horas(1 o mas cifras):minutos(1 o mas cifras):segundos(1 o mas cifras)
     """
-    if re.match(r"\d+:\d+:\d+", horario):
+    if re.match(r"^\d+:\d+:\d+$", horario):
         return True
     else:
         return False
