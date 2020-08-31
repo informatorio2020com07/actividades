@@ -8,6 +8,7 @@
 def primos_en_rango(a=0, b=100):
     primos = [2]  # lista de números primos
     # recorro todos los números hasta b
+    primos_in_range = []
     for num in range(2, b + 1):
         for primo in primos:
             # divido cada número por cada número primo
@@ -22,12 +23,14 @@ def primos_en_rango(a=0, b=100):
             # (Este primo también va a ser utilizado para 
             # chequear los siguientes números)
             primos.append(num)
+            if num >= a and num <= b:
+                primos_in_range.append(num)
 
     # Solo incluyo los primos dentro del rango indicado
-    primos_in_range = tuple([p for p in primos if (p >= a and p <= b)])
+    # primos_in_range = tuple([p for p in primos if (p >= a and p <= b)])
     return primos_in_range # y lo devuelvo
 
 
 if __name__ == "__main__":
     # debería incluir los números primos del 2 al 97
-    print(primos_en_rango(b=97))
+    print(primos_en_rango(a=47, b=97))
