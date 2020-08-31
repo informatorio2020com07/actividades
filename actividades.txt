@@ -1,4 +1,4 @@
-1- Realizar un fork del repositorio.
+1- Realizar un fork del repositorio. 
 2- Crear una carpeta nombrada "apellido_nombre".
 3- Crear subcarpetas nombrada con el número de la actividad y dentro
 de ellas la actividad resuelta.
@@ -97,3 +97,23 @@ a y b (incluyendo a y b si son primos).
     los valores que se encuentran duplicados de la lista.
     Retornar la lista, y una tupla con los valores que han sido
     eliminados.
+
+006-
+    Crear una función que reciba una lista de números y elimine
+    los valores que se encuentran duplicados de la lista.
+    Retornar la lista, y una tupla con los valores que han sido
+    eliminados.
+
+007-
+    Realizar modelo entidad relación, luego pasar a tablas.
+    Realizar un script para mysql que cree las correspondientes tablas.
+    Realizar un script que inserte datos en las distintas tablas.
+
+    Caso:
+        Un actor puede actuar en 1 o más películas.
+        En una película pueden actuar varios actores.
+        A una película la puede dirigir uno o varios directores, y cada director pudo haber dirigido varias películas.
+
+        De los actores, se quiere conocer: nombre, apellido y fecha de nacimiento.
+        De los directores, se quiere conocer: nombre, apellido y fecha de nacimiento.
+        De las películas, se quiere conocer: nombre, fecha de estreno y costo total.
