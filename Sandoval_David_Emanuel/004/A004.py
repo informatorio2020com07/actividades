@@ -19,10 +19,11 @@ class NoteManager:
             cuerpo += linea + "\n"
 
         self.add_modelo(nombre, cuerpo)
-        print("Modelo agregado")
+        print("\n" + "Modelo agregado" + "\n")
         print("Nombre:", nombre)
         print("Cuerpo:", self.modelos.get(nombre))
-        print(self.modelos.get("estandar"))
+        # print(self.modelos.get(nombre))
+        return nombre # para obtener un fácil acceso a la nota recién creada
 
     def add_modelo(self, nombre, cuerpo):
         self.modelos[nombre] = cuerpo
@@ -30,7 +31,7 @@ class NoteManager:
     def borrar_modelo(self):
         self.listar_modelos()
         while True:
-            modelo_a_borrar = input("ingrese el modelo a borrar: ")
+            modelo_a_borrar = input("Ingrese el modelo a borrar: ")
             if modelo_a_borrar:
                 try:
                     del self.modelos[modelo_a_borrar]
@@ -137,16 +138,20 @@ class NoteSender:
         """Pide al usuario que elija un modelo de nota"""
         seleccion = None
         while True:
-            print("Modelos de Nota\n")
+            print("Modelos de Nota:\n")
             self.listar_modelos_nota()
+            numero_opcion_agregar = len(self.note_manager.get_modelos()) + 1
+            print(f"{numero_opcion_agregar} ) Enviar nota persnalizada")
             print("0 ) Salir")
+            print()
             seleccion = input("Selecciona un modelo: ")
             if seleccion.isdigit():
                 seleccion = int(seleccion)
-                if seleccion in range(len(self.note_manager.get_modelos()) + 1):
+                if seleccion in range(len(self.note_manager.get_modelos()) + 2):
                     if seleccion == 0:
                         return seleccion
-                    print("Modelo elegido:", self.note_manager.get_nombre_por_indice(seleccion))
+                    print()
+                    print("Modelo elegido:", self.note_manager.get_nombre_por_indice(seleccion) or "Personalizado")
                     break
                 else:
                     print("Indique un número válido")
@@ -162,6 +167,7 @@ class NoteSender:
         """Pide al usuario una lista de destinatarios"""
         if self.destinatarios is None:
             self.destinatarios = []
+        print()
         print("Ingrese la lista de destinatarios, para terminar presione <enter>\n")
         while True:
             destinatario = input("Destinatario: ")
@@ -182,15 +188,19 @@ class NoteSender:
         nombre_modelo_nota = self.note_manager.get_nombre_por_indice(modelo_nota)
         self.pedir_remitente()
         self.pedir_destinatarios()
-        if nombre_modelo_nota:
-            cuerpo_modelo_nota = self.note_manager.get_modelo(nombre_modelo_nota.lower())
-            for destinarario in self.destinatarios:
-                note = self.note_model.from_args(remitente=self.remitente, destinatario=destinarario,
-                                                 body=cuerpo_modelo_nota, tipo=nombre_modelo_nota)
-                note.build_body()
-                self.notas.append(note)
+        if nombre_modelo_nota is None:
+            print("  Creando nota ".center(80, "#"))
+            nombre_modelo_nota = self.note_manager.create_modelo()
+        # nombre_modelo_nota:
+        cuerpo_modelo_nota = self.note_manager.get_modelo(nombre_modelo_nota.lower())
+        for destinarario in self.destinatarios:
+            note = self.note_model.from_args(remitente=self.remitente, destinatario=destinarario,
+                                                body=cuerpo_modelo_nota, tipo=nombre_modelo_nota)
+            note.build_body()
+            self.notas.append(note)
         # Enviamos las notas que tengamos
         for nota in self.notas:
+            print()
             print("  ENVIADO  ".center(80, "#"))
             print(nota.get_body())
             
