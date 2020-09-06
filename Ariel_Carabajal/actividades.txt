@@ -1,0 +1,99 @@
+1- Realizar un fork del repositorio. 
+2- Crear una carpeta nombrada "apellido_nombre".
+3- Crear subcarpetas nombrada con el número de la actividad y dentro
+de ellas la actividad resuelta.
+4- Realizar pull request.
+5- Se van a ir agregando más actividades en el repo principal con el tiempo, por lo cuál van a tener que ir sincronizando el fork.
+
+
+____________
+
+
+Activades:
+
+
+001-
+    Programa que pregunte al usuario, el precio del producto y la cantidad de unidades vendidas.
+    Informar el total de ventas.
+
+002-
+    Realizar un función que reciba como parámetro una cantidad de
+    segundos, y devuelva una tupla con la cantidad de segundos
+    expresada en hh,mm,ss.
+
+    Realizar una función que reciba como parámetros cantidades de horas, minutos y/o segundos. Y que retorne la suma de estos expresanda en segundos. (Los parámetros, son opcionales y por defecto sus valores 0.)
+
+    En otro archivo, importar las funciones creadas.
+    Realizar un programa que:
+        
+        Primero pregunte por una cantidad de segundos, y diga cuantas horas, minutos y segundos son.
+        
+        Luego, preguntar por una cantidad de minutos y decir a cuantas
+        horas, minutos y segundos representa.
+
+        Después, solicitar al usuario ingresar una cantidad de tiempo expresada en una cadena de cáracter como "hs:mm:ss".
+            Mostrar cuantas horas ingresó el usuario, cuantos minutos, y cuantos segundos en distintas lineas.
+            Luego mostrar a cuanto tiempo expresado en segundos equivale.
+                
+                Horas: 10
+                Minutos: 30
+                Segundos: 25
+                Equivale a: 37825 Segundos.
+
+_______________
+
+003- 
+    Crear una clase Persona, que tenga atributo nombre y apellido, y los metodos get y set para cada atributo.
+
+004-
+
+    Un programa que permita escribir varios modelos de cartas/notas
+y que después pueda seleccionar un modelo de nota, y que me generé
+varias notas reemplazando los destinatarios con una lista de nombres
+que se le pase y el nombre del remitente indicado.
+    
+    Ej:
+    ----
+        Estimado (nombre):
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            (nombre_remitente)
+    ----
+
+    Pasandole lista destinatarios: Juan, Sandra y Jorge.
+        Y remitente Axel.
+
+    ----
+        Estimado Juan:
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            Axel
+    ----
+        Estimado Sandra:
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            Axel
+    ----
+
+        Estimado Jorge:
+            Le damos la bienvenida al servicio.
+
+        Con afecto,
+            Axel                        
+    ----
+
+
+005-
+    Función que reciba como parametros dos números (a y b), y
+devuelva una tupla con todos los números primos que se encuentra entre
+a y b (incluyendo a y b si son primos).
+    Por defecto a=0, y b=100
+
+006-
+    Crear una función que reciba una lista de números y elimine
+    los valores que se encuentran duplicados de la lista.
+    Retornar la lista, y una tupla con los valores que han sido
+    eliminados.
