@@ -117,3 +117,6 @@ a y b (incluyendo a y b si son primos).
         De los actores, se quiere conocer: nombre, apellido y fecha de nacimiento.
         De los directores, se quiere conocer: nombre, apellido y fecha de nacimiento.
         De las películas, se quiere conocer: nombre, fecha de estreno y costo total.
+
+008-
+    Programa que permita jugar al ahorcado.
