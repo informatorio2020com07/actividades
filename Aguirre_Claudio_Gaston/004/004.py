@@ -1,18 +1,51 @@
-#-*- coding: utf-8 -*- 
-#Un programa que permita escribir varios modelos de cartas/notas y que después pueda seleccionar un modelo de nota, y que me genere varias notas reemplazando los destinatarios con una lista de nombres que se le pase y el nombre del remitente indicado.
 import os
+import sys
+from io import open
 
-def carta():
+#Un programa que permita escribir varios modelos de cartas/notas y que después pueda seleccionar un modelo de nota, y que me genere varias notas reemplazando los destinatarios con una lista de nombres que se le pase y el nombre del remitente indicado.
+
+def nuevo_model(opcion):
 #permite escribir cartas/notas 
 	print('Para finalizar ingresa un espacio en blanco " " en un renglón nuevo')
 	print("Puedes escribir tu carta: ")
-	carta=[]
+	car="carta{}.txt".format(opcion)
+	carta=open(car,"w")
 	renglon = input("")
 	while renglon != " ":
-		carta.append(renglon)
+		renglon = renglon+"\n"
+		carta.write(renglon)
 		renglon = input("")
-	return carta
+	carta.close()
+	return 
 
+def mostrar_guardados(frase):
+#muestra modelos guardados
+	os.system("Cls") 
+	
+	for i in range (1,4):
+		print(" {} : _".format(i))
+		imprimir_carta("(nombre)","(rtte)",i)
+	print(frase)
+	opcion = input("opción: ")
+	return opcion
+
+def imprimir_carta(nombre,rtte,eleccion):
+	base="""
+    ----
+        Señor/a {0}:
+  {2}
+
+        Atte,
+            {1}
+    ----"""
+	car="carta{}.txt".format(eleccion)
+	carta=open(car,"r")
+	modelo=carta.read()
+	print(base.format(nombre, rtte, modelo))
+	print(" ")
+	carta.close
+	return
+	
 def names():
 #crea lista de nombres mediante inputs
 	lista_nombres = []
@@ -24,90 +57,38 @@ def names():
 		cont += 1
 		lista_nombres.append(nombre)
 		nombre = input("Destinatario {}: ".format(cont))
-	return lista_nombres
+	return lista_nombres		
 	
-
+def salir():
+    
+    sys.exit(0)
 	
-def main():
+def main():	
+	while True:
+		os.system("Cls") 	
 	
-	
-	opciones=("""
-Elige modelo de carta
-    1:
-    ----
-        Estimado (nombre):
-            Le damos la bienvenida al servicio.
-
-        Con afecto,
-            (nombre_remitente)
-    ----
-    2:
-    ----
-        Señor/a (nombre):
-            De mi mayor consideracion.
-
-        Atte,
-            (nombre_remitente)
-    ----
-    3:
-    ----
-        Señor/a (nombre):
-            Le damos la bienvenida al servicio.
-
-        Atte,
-            (nombre_remitente)
-    ----
-""")
-	modelos = {    "1" : """
-    ----
-        Estimado {0}:
-            Le damos la bienvenida al servicio.
-  {2}
-
-        Con afecto,
-            {1}
-    ----""",
-    "2" : """
-    ----
-        Señor/a {0}:
-            De mi mayor consideración.
-  {2}
-
-        Atte,
-            {1}
-    ----""",
-    "3" : """
-    ----
-        Señor/a {0}:
-            Le damos la bienvenida al servicio.
-  {2}
-			
-        Atte,
-            {1}
-    ----""",
-	}
-	#seleccion de un modelo de nota
-	bucle=True
-	while bucle:
-		os.system("Cls") 
-		print(opciones)
-		eleccion = input("Elige una opción válida: ")
-		modelo = modelos.get(eleccion)
-		if modelo:
-			bucle=False
-		else:
-			print("{0} no es una elección válida".format(eleccion))
-	rtte=input("ingrese nombre del Remitente: ")
-	nombres=names()
-	escrito=carta()
-	#genera varias cartas reemplazando los destinatarios con una la lista de nombres y el nombre del remitente indicado
-	for nombre in nombres:
-		cartas = ""
-		cartas = (modelo.format(nombre,rtte,'\n'.join("{}".format(renglon)
-		for renglon in escrito)))
-		print (cartas)
-	
-main()	
-
+		print("1 - Nuevo modelo de carta")
+		print("2 - Elige un modelo existente")
+		print("3 - salir")
+		opcion_menu=input("elige una opcion: ")
+		lista_opcion=("1","2","3") #para seleccion de un modelo de nota
 		
-		
+		if opcion_menu == "1":		
+			opcion=mostrar_guardados("elige modelo que quieres sobreescribir: ")
+			while opcion not in lista_opcion:
+				opcion=mostrar_guardados("elige modelo que quieres sobreescribir: ")
+			nuevo_model(opcion)
+		if opcion_menu == "2":
+			opcion=mostrar_guardados("elige el modelo que quieres imprimir: ")
+			while opcion not in lista_opcion:
+				opcion=mostrar_guardados("elige el modelo que quieres imprimir: ")
+			rtte=input("ingrese al emisor de la carta: ")
+			lista_nombres=names()
+			#genera varias cartas reemplazando los destinatarios con una la lista de nombres y el nombre del remitente indicado
+			for nombre in lista_nombres:
+				imprimir_carta(nombre,rtte,opcion)
+
+			input("volver a menú")
+		if opcion_menu == "3":
+			salir()
+main()
