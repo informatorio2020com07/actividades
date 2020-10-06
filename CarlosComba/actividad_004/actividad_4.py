@@ -136,7 +136,12 @@ NOT EXISTS(SELECT titulo FROM titulo WHERE titulo=%s)LIMIT 1"
         return False
 
 def elegir_predefinido():
-    lista_nota=cargar_nota()
+    try:
+        lista_nota=cargar_nota()
+    except Exception as ex:
+        print("hola")
+        print(ex)
+    
     print("")
     for lis in lista_nota:
         mostrar_nota(lis)
